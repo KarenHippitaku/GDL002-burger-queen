@@ -1,0 +1,76 @@
+{
+	"menu":
+		{
+			"dishes": [{
+				"title": "Frito de vainilla",
+				"price": "$35"
+			},
+			{
+				"title": "Frito de chocolate",
+				"price": "$35"
+			},
+			{
+				"title": "Frito de vainilla con plátano frito",
+				"price": "$35"
+			},
+			{
+				"title": "Frito de queso con zarzamora",
+				"price": "$35"
+			},
+			{
+				"title": "Frito de maple",
+				"price": "$35"
+			},
+			{
+				"title": "Papas fritas",
+				"price": "$15"
+			},
+			{
+				"title": "Banderilla",
+				"price": "$15"
+			}
+		],
+		"toppings": [{
+			"title": "Tocino",
+			"price": "$15"
+		},
+		{
+			"title": "Jarabe de chocolate",
+			"price": "$5"
+		},
+		{
+			"title": "Mermelada de zarzamora",
+			"price": "$5"
+		},
+		{
+			"title": "Mermelada de fresa",
+			"price": "$5"
+		},
+		{
+			"title": "Miel de maple",
+			"price": "$5"
+		},
+		{
+			"title": "Jarabe de café",
+			"price": "$5"
+		}
+	],
+	"drinks": [{
+		"title": "Malteada de vainilla",
+		"price": "$20"
+	},
+	{
+		"title": "Malteada de chocolate",
+		"price": "$20"
+	},
+	{
+		"title": "Malteada de mantequilla de manny",
+		"price": "$20"
+	},
+	{
+		"title": "Tonicol",
+		"price": "$15"
+	}
+]
+}
+	}
