@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Navigation from './components/Navigation';
 import {menu} from './menu.json';
 
 class App extends Component {
@@ -15,10 +16,10 @@ class App extends Component {
     const dishes = this.state.menu.dishes.map((dish, i) => {
       return (
         <dl className="card" key={i}>
-          <dt className="cardHeader">
+          <dt className="card-header">
           <h3>{dish.title}</h3>
           </dt>
-          <dt className="cardBody">
+          <dt className="card-body">
           <p>{dish.price}</p>
           </dt>
         </dl>
@@ -28,10 +29,10 @@ class App extends Component {
     const toppings = this.state.menu.toppings.map((topping, i) => {
       return (
         <dl className="card" key={i}>
-          <dt className="cardHeader">
+          <dt className="card-header">
           <h3>{topping.title}</h3>
           </dt>
-          <dt className="cardBody">
+          <dt className="card-body">
           <p>{topping.price}</p>
           </dt>
         </dl>
@@ -41,10 +42,10 @@ class App extends Component {
     const drinks = this.state.menu.drinks.map((drink, i) => {
       return (
         <dl className="card" key={i}>
-          <dt className="cardHeader">
+          <dt className="card-header">
           <h3>{drink.title}</h3>
           </dt>
-          <dt className="cardBody">
+          <dt className="card-body">
           <p>{drink.price}</p>
           </dt>
         </dl>
@@ -55,14 +56,9 @@ class App extends Component {
       <div className="App">
       <header className="App-header">
       <img src={logo} className="App-logo" alt="logo" />
-      <p>
-      Edit <code>src/App.js</code> and save to reload.
-      </p>
-      <a className="text-white">
-      Portable menu
-      </a>
+      <Navigation/>
       </header>
-      <section className="menuSection">
+      <section className="menuSection col-md-4">
         <div className="container dishes">
         <div className="row mt-4">
           {dishes}
