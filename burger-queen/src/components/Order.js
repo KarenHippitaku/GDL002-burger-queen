@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Button from './Button';
 
-class Card extends Component {
+class Order extends Component {
   constructor() {
     super();
     this.state = {
@@ -24,7 +24,7 @@ class Card extends Component {
   }
   render() {
     return (
-      <div className="card">
+      <div className="order">
         <form className="card-body" onSubmit={this.handleSubmit}>
           <div className="form-group">
             <input
@@ -59,4 +59,4 @@ class Card extends Component {
   }
 }
 
-export default Card
+export default Order
