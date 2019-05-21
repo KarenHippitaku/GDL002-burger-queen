@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 import Navigation from './components/Navigation';
+// import MenuButton from './components/MenuButton';
+import Card from './components/Card';
 import {menu} from './menu.json';
 
 class App extends Component {
@@ -11,6 +13,13 @@ class App extends Component {
       menu
     }
   }
+
+  // handleAddOrder(dish, topping, drink) {
+  //   this.state({
+  //     menu: [...this.state.menu, ]
+  //   })
+  // }
+
   render() {
     // console.log(this.state.menu.dishes);
     const dishes = this.state.menu.dishes.map((dish, i) => {
@@ -55,7 +64,6 @@ class App extends Component {
     return (
       <div className="App">
       <header className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
       <Navigation/>
       </header>
       <section className="menuSection col-md-4">
@@ -68,12 +76,15 @@ class App extends Component {
         </div>
         </div>
       </section>
-      <section className="menuSection">
+      <section className="menuSection col-md-4">
         <div className="container dishes">
         <div className="row mt-4">
           {drinks}
         </div>
         </div>
+      </section>
+      <section>
+      <Card/>
       </section>
       </div>
     );
