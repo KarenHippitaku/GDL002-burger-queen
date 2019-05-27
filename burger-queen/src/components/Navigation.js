@@ -1,4 +1,7 @@
 import React, {Component} from 'react';
+// import Dishes from './Dishes';
+// import Drinks from './Drinks';
+// import Toppings from './Toppings';
 import logo from '../logo.svg';
 
 class Navigation extends Component {
@@ -6,13 +9,13 @@ class Navigation extends Component {
     return (
       <nav className="navbar navbar-dark bg-dark">
       <img src={logo} className="App-logo" alt="Pomelo-logo.png" />
-      <a href="" className="text-white">
+      <a href="Dishes" className="text-white">
       {"Platillos".toUpperCase()}
       </a>
-      <a href="" className="text-white">
+      <a href="Toppings"className="text-white">
       {"Toppings".toUpperCase()}
       </a>
-      <a href="" className="text-white">
+      <a href="Drinks" className="text-white">
       {"Bebidas".toUpperCase()}
       </a>
       </nav>
