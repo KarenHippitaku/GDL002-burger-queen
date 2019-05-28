@@ -1,0 +1,16 @@
+nav.navbar.navbar-dark.bg-dark {
+  margin: 0;
+  display: flex;
+  flex-flow: wrap;
+  align-content: center;
+  justify-content: space-around;
+  max-height: 6rem;
+  width: -webkit-fill-available;
+  margin: 0;
+  padding: 0.5rem 1rem;
+}
+
+.text {
+  color: #ffdaa2;
+  font-size: 2rem;
+}
