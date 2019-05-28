@@ -12,7 +12,7 @@
 				"value": 35
 			},
 			{
-				"title": "Frito de vainilla con plátano frito",
+				"title": "Frito de maple",
 				"price": "$35",
 				"value": 35
 			},
@@ -22,7 +22,7 @@
 				"value": 35
 			},
 			{
-				"title": "Frito de maple",
+				"title": "Frito de vainilla con plátano frito",
 				"price": "$35",
 				"value": 35
 			},
@@ -80,7 +80,7 @@
 	{
 		"title": "Malteada de mantequilla de manny",
 		"price": "$20",
-		"value": 20
+		"value": 25
 	},
 	{
 		"title": "Tonicol",
