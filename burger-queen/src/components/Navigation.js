@@ -3,20 +3,39 @@ import './Navigation.css';
 // import Dishes from './Dishes';
 // import Drinks from './Drinks';
 // import Toppings from './Toppings';
-import logo from '../logo.svg';
+import pomelo from './img/pomelo-04.png'
+// import {menu} from '../menu.json';
+
 
 class Navigation extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      style: {display: 'none'},
+      initialstyle: {display: 'none'}
+    };
+    // this.handleAddToOrder = this.handleAddToOrder.bind(this);
+  }
+  updateStyle = (style) => {
+    if (this.state.style.display === 'none') {
+      this.setState ({display:'display'});
+    return;
+  } else {
+    this.setState({display: 'none'});
+  }
+
+  }
   render() {
     return (
-      <nav className="navbar navbar-dark bg-dark">
-      <img src={logo} className="App-logo" alt="Pomelo-logo.png" />
-      <a href="Dishes" className="text">
+      <nav className="navbar">
+      <img src={pomelo} className="App-logo" alt="Pomelo-logo.png" />
+      <a href='dishes' className="text" onClick={this.state.updateStyle ? 'flex' : 'none'}>
       {"Platillos".toUpperCase()}
       </a>
-      <a href="Toppings" className="text">
+      <a href='toppings' className="text" onClick={this.state.updateStyle ? 'flex' : 'none'}>
       {"Toppings".toUpperCase()}
       </a>
-      <a href="Drinks" className="text">
+      <a href='drinks' className="text" onClick={this.state.updateStyle ? 'flex' : 'none'}>
       {"Bebidas".toUpperCase()}
       </a>
       </nav>

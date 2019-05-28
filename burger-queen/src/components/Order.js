@@ -1,12 +1,15 @@
 import React, {Component} from 'react';
+import OrderedItem from './OrderedItem';
 import Button from './Button';
+import './Order.css';
 
 class Order extends Component {
   constructor() {
     super();
     this.state = {
       mesa: '',
-      cliente: ''
+      cliente: '',
+      orden: ''
     };
     this.handleInput = this.handleInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -19,6 +22,7 @@ class Order extends Component {
   }
   handleSubmit(e) {
     e.preventDefault();
+    // this.props.addToOrder(this.state);
     console.log(this.state);
 
   }
@@ -45,14 +49,15 @@ class Order extends Component {
             />
           </div>
           <div className="form-group">
-            <table
+            <div
             type="text"
             name="orden"
             className="form-control"
             >
-            </table>
+            <OrderedItem/>
+            </div>
           </div>
-          <Button title="Listo"/>
+          <Button className="btn orderBtn" label="Listo"/>
         </form>
       </div>
     )

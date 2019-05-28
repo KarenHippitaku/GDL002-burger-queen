@@ -1,15 +1,17 @@
 .App {
   text-align: center;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
+  /* animation: App-logo-spin infinite 20s linear; */
   height: 4rem;
-  pointer-events: none;
+  /* pointer-events: none; */
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #ffdaa2;
   min-height: 20%;
   display: flex;
   flex-direction: column;
@@ -22,7 +24,7 @@
 .App-link {
   color: #61dafb;
 }
-
+/*
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -30,38 +32,51 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
 
 /* section {
   justify-content: center;
   width: 40%;
   margin: 0;
-}
-
-.menuSection {
-  margin: 0;
 } */
 
-.order {
-  float: right;
-  width: 30rem;
-}
-.card {
-  max-width: 15rem;
-  height: 12rem;
-  /* border-radius: 3rem; */
-  margin-right: 1rem;
+.menuSection {
+  display: flex;
+  /* flex-flow: wrap; */
+  width: 100%;
 }
 
-.card-header {
+/*
+form.card-body {
+  float: right;
+  position: absolute;
+} */
+div.container {
+  display: flex;
+  flex-flow: wrap;
+  float: left;
+  width: 70%;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  margin: 0.5rem;
+  margin-top: 1rem;
+}
+
+dl.card {
+  background: rgba(255, 255, 255, 0.8);
+  max-width: 12rem;
+  height: auto;
+  border-radius: 1rem;
+  margin-right: 0.5rem;
+  margin-left: 0.5rem;
+}
+
+dt.card-header {
   display: flex;
   height: auto;
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
-.card-body {
-  height: auto;
-  align-content: center;
-}
+
 dt.card-body {
   padding: .8rem;
 }

@@ -1,0 +1,28 @@
+
+div.order {
+  float: right;
+  width: 35%;
+  max-height: 80%;
+  background: rgba(255, 255, 255, 0.8);
+  margin: 0.5rem;
+  margin-right: 1rem;
+  border-radius: 1rem;
+}
+div.form-control {
+  height: auto;
+}
+
+button.btn.orderBtn {
+  background: #fff;
+  color: #e09590;
+  border: solid #e09590;
+  border-radius: 1rem;
+}
+
+button.closeBtn {
+  position: right;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #aaa;
+}

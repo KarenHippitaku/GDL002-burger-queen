@@ -1,17 +1,19 @@
-import React, {Component} from 'react';
+import React from 'react';
 import Button from './Button';
 
-class OrderedItem extends Component {
-  render() {
+const OrderedItem = (props) => {
+  // render() {
     return (
-      <span
-      className="orderedItem"
-      onClick={() => this.props.removeItem(this.props.index)}>
-      {this.props.title} - ${this.props.price}
-      <Button className="closeBtn" label="x"/>
+      <span className="orderedItem">
+      {props.title} - ${props.price}
+      <Button
+      className="closeBtn"
+      label="x"
+      onClick={() => this.props.removeFromOrder(this.props.index)}
+      />
       </span>
     )
-  }
+  // }
 }
 
 export default OrderedItem

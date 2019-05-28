@@ -26,7 +26,7 @@ class Dishes extends Component {
       // console.log(this.state.menu.dishes);
       const dishes = this.state.menu.dishes.map((dish, i) => {
         return (
-          <dl className="card" key={i} onClick={this.addItem.bind(this, i)}>
+          <dl className="card" key={i}>
             <dt className="card-header">
               <h3>{dish.title}</h3>
             </dt>
