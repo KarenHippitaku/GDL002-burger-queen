@@ -1,8 +1,9 @@
 import React from 'react';
+import './MenuButton.css';
 
 const MenuButton = (props) => {
       return (
-        <dl className="card" key={props.index} onClick={props.onClick}>
+        <dl className="card" onClick={props.onClick}>
           <dt className="card-header">
           <h3>{props.title}</h3>
           </dt>
@@ -11,5 +12,5 @@ const MenuButton = (props) => {
           </dt>
         </dl>
       )
-}
-export default MenuButton
+};
+export default MenuButton;
