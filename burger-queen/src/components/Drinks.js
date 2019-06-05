@@ -6,12 +6,14 @@ class Drinks extends Component {
     constructor() {
       super();
       this.state = {
-        menu
+        menu,
+        style: {display: 'none'},
+        initialstyle: {display: 'none'}
       }
     }
     render() {
       // console.log(this.state.menu.dishes);
-      const drinks = this.state.menu.dishes.map((drink, i) => {
+      const drinks = this.state.menu.drinks.map((drink, i) => {
         return (
           <dl className="card" key={i}>
             <dt className="card-header">
@@ -24,9 +26,7 @@ class Drinks extends Component {
         )
       });
       return (
-        <section className="menuSection col-md-8">
-          <div className="container drinks">
-            <div className="row mt-4">
+          <div className="container drinks" style= {this.props.display}>
               {drinks}
             </div>
           </div>

@@ -6,12 +6,14 @@ class Toppings extends Component {
     constructor() {
       super();
       this.state = {
-        menu
+        menu,
+        style: {display: 'none'},
+        initialstyle: {display: 'none'}
       }
     }
     render() {
       // console.log(this.state.menu.dishes);
-      const toppings = this.state.menu.dishes.map((topping, i) => {
+      const toppings = this.state.menu.toppings.map((topping, i) => {
         return (
           <dl className="card" key={i}>
             <dt className="card-header">
@@ -24,14 +26,9 @@ class Toppings extends Component {
         )
       });
       return (
-        <section className="menuSection col-md-8">
-          <div className="container toppings">
-            <div className="row mt-4">
+          <div className="container toppings" style= {this.props.display}>
               {toppings}
-            </div>
           </div>
-          <Order/>
-        </section>
       )
     }
 }

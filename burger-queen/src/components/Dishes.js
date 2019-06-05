@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
-import Order from './Order';
+// import Order from './Order';
 import {menu} from '../menu.json';
 // import {orders} from '../orders.json';
+// import * as handleAddOrder from '../App';
 
 class Dishes extends Component {
     constructor() {
       super();
       this.state = {
-        menu
+        menu,
+        style: {display: 'none'},
+        initialstyle: {display: 'none'}
       };
       // this.handleAddToOrder = this.handleAddToOrder.bind(this);
     }
@@ -37,12 +40,10 @@ class Dishes extends Component {
         )
       });
       return (
-        <section className="menuSection">
-          <div className="container dishes">
+
+          <div className="container dishes" style= {this.props.display}>
               {dishes}
           </div>
-          <Order/>
-        </section>
       )
     }
 }
