@@ -4,12 +4,12 @@ import Button from './Button';
 import './Order.css';
 
 class Order extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       mesa: '',
       cliente: '',
-      orden: ''
+      order: ''
     };
     this.handleInput = this.handleInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
