@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
-// import Order from './Order';
+import Order from './Order';
 import {menu} from '../menu.json';
 // import {orders} from '../orders.json';
 // import * as handleAddOrder from '../App';
+import MenuButton from './MenuButton';
+import './Menu.css';
 
 class Dishes extends Component {
     constructor() {
@@ -29,21 +31,16 @@ class Dishes extends Component {
       // console.log(this.state.menu.dishes);
       const dishes = this.state.menu.dishes.map((dish, i) => {
         return (
-          <dl className="card" key={i}>
-            <dt className="card-header">
-              <h3>{dish.title}</h3>
-            </dt>
-            <dt className="card-body">
-              <p>{dish.price}</p>
-            </dt>
-          </dl>
+          <MenuButton key={i} price={dish.price} title={dish.title}/>
         )
       });
       return (
-
-          <div className="container dishes" style= {this.props.display}>
-              {dishes}
-          </div>
+        <section className="menuSection">
+        <div href='/dishes' className="container dishes" style= {this.props.display}>
+        {dishes}
+        </div>
+        <Order/>
+        </section>
       )
     }
 }

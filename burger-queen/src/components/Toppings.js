@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Order from './Order';
 import {menu} from '../menu.json';
+import MenuButton from './MenuButton';
+import './Menu.css';
 
 class Toppings extends Component {
     constructor() {
@@ -15,20 +17,16 @@ class Toppings extends Component {
       // console.log(this.state.menu.dishes);
       const toppings = this.state.menu.toppings.map((topping, i) => {
         return (
-          <dl className="card" key={i}>
-            <dt className="card-header">
-              <h3>{topping.title}</h3>
-            </dt>
-            <dt className="card-body">
-              <p>{topping.price}</p>
-            </dt>
-          </dl>
+          <MenuButton key={i} price={topping.price} title={topping.title}/>
         )
       });
       return (
-          <div className="container toppings" style= {this.props.display}>
-              {toppings}
-          </div>
+        <section className="menuSection">
+        <div  href='/toppings' className="container toppings" style= {this.props.display}>
+        {toppings}
+        </div>
+        <Order/>
+        </section>
       )
     }
 }
