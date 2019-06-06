@@ -1,0 +1,15 @@
+div.Home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* box-sizing: border-box;
+  margin: 0; */
+
+}
+.homeLogo {
+  size: 150%;
+  margin: 10rem;
+  position: relative;
+  box-shadow: white;
+
+}
