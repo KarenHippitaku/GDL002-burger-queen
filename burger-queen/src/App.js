@@ -1,89 +1,75 @@
-import React, {useState} from 'react';
+import React, {Component} from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './App.css';
 import Navigation from './components/Navigation';
 import Dishes from './components/Dishes';
+import Drinks from './components/Drinks';
+import Toppings from './components/Toppings';
 // import MenuButton from './components/MenuButton';
 // import Order from './components/Order';
 // import {menu} from './menu.json';
-import {remove} from 'lodash';
+// import {remove} from 'lodash';
+import Home from './components/Home';
 
-const App = (props) => {
-  //We can skip super() or even the whole constructor() and you can write directly state = {}
-  // constructor() {
-  //   super();
-  //   this.state = {
-  //     menu
-  //   }
-  // }
-  //updateExample = () => {
-    //this.setState({ object: value });
-  //}
-  //<Button name="Your botton action" action={this.updateExample} />
-
-  //state = {
-  //color: 'blue'
-  //}
-  //updateBackgroundColor = (color) => {
-    //this.setState({ color: color });
-  //}
-  //<Button name="change to red" action={() => this.updateBackgroundColor('red')} />
-  //<Button name="change to yellow" action={() => this.updateBackgroundColor('yellow')} />
-
-  //state = {
-  //color: 'blue',
-  //basicColor: 'blue'
-  //}
-  //updateBackgroundColor = (color) => {
-    //if (this.state.color === 'blue') {
-    //this.setState({ color: color });
-    //return;
-    //} else {
-    //this.setState({ color: 'blue' });
-    //}
-  //}
-  //<Button name="change to red" action={() => this.updateBackgroundColor('red')} />
-  //<Button name="change to yellow" action={() => this.updateBackgroundColor('yellow')} />
-
-
-  // handleAddOrder(dish, topping, drink) {
-  //   this.state({
-  //     menu: [...this.state.menu, ]
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      order: '',
+      style: {display: 'none'},
+      initialstyle: {display: 'none'}
+    }
+  }
+  // const [order, setOrder] = useState([]);
+  //
+  // const addToOrder = (item) => {
+  //   let orderUpdate = order.concat(item);
+  //   setOrder(() => {
+  //     return orderUpdate;
   //   })
-  // }
+  // };
+  //
+  // const removeFromOrder = (index) => {
+  //   let stateOrder = [...order];
+  //   remove(stateOrder, (order, stateIndex) => {
+  //     return stateIndex === index;
+  //   })
+  //   setOrder(() => {
+  //     return stateOrder;
+  //   })
+  // };
 
-// const props = this.props; //declares props in a class kind Component
-  // render() {
-  const [order, setOrder] = useState([]);
+  handleAddOrder(dish, topping, drink) {
+      this.state({
+          order: [...this.state.order, ]
+        })
+      };
 
-  const addToOrder = (item) => {
-    let orderUpdate = order.concat(item);
-    setOrder(() => {
-      return orderUpdate;
-    })
-  };
-
-  const removeFromOrder = (index) => {
-    let stateOrder = [...order];
-    remove(stateOrder, (order, stateIndex) => {
-      return stateIndex === index;
-    })
-    setOrder(() => {
-      return stateOrder;
-    })
-  };
-
+      // updateStyle = (style) => {
+      //   if (this.state.style.display === 'none') {
+      //     this.setState ({display:'flex'});
+      //   return;
+      // } else {
+      //   this.setState({display: 'none'});
+      // };
+      //
+      // const props = this.props; //declares props in a class kind Component
+      // render() {
+  render() {
     return (
       <div className="App">
+      <Router>
         <header>
           <Navigation/>
+          <Route exact path='/' component={Home}/>
+          <Route exact path='/dishes' component={Dishes}/>
+          <Route exact path='/toppings' component={Toppings}/>
+          <Route exact path='/drinks' component={Drinks}/>
         </header>
-        <Dishes
-        order = {order}
-        addToOrder = {addToOrder}
-        removeFromOrder = {removeFromOrder}/>
+        </Router>
       </div>
     );
-  // }
+   }
 }
 
 export default App;
