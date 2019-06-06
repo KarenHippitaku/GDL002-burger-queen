@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { Link } from 'react-router-dom';
 import './Navigation.css';
 // import Dishes from './Dishes';
 // import Drinks from './Drinks';
@@ -18,7 +19,7 @@ class Navigation extends Component {
   }
   updateStyle = (style) => {
     if (this.state.style.display === 'none') {
-      this.setState ({display:'display'});
+      this.setState ({display:'flex'});
     return;
   } else {
     this.setState({display: 'none'});
@@ -26,18 +27,19 @@ class Navigation extends Component {
 
   }
   render() {
+      // <a href='dishes' className="text" onClick={this.props.updateStyle ? 'flex' : 'none'}>
     return (
       <nav className="navbar">
       <img src={pomelo} className="App-logo" alt="Pomelo-logo.png" />
-      <a href='dishes' className="text" onClick={this.state.updateStyle ? 'flex' : 'none'}>
+      <Link to='/dishes' className="text" onClick={() => this.updateStyle()}>
       {"Platillos".toUpperCase()}
-      </a>
-      <a href='toppings' className="text" onClick={this.state.updateStyle ? 'flex' : 'none'}>
+      </Link>
+      <Link to='/toppings' className="text" onClick={() => this.updateStyle()}>
       {"Toppings".toUpperCase()}
-      </a>
-      <a href='drinks' className="text" onClick={this.state.updateStyle ? 'flex' : 'none'}>
+      </Link>
+      <Link to='/drinks' className="text" onClick={() => this.updateStyle()}>
       {"Bebidas".toUpperCase()}
-      </a>
+      </Link>
       </nav>
 
     )
