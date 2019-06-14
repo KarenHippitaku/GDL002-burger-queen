@@ -1,16 +1,13 @@
 import React from 'react';
 import Button from './Button';
+import './OrderedItem.css';
 
 const OrderedItem = (props) => {
 
-//   const remove = (items,index) => {
-//   return [...items.slice(0,index),
-//           ...items.slice(index+1,items.length)];
-// };
   // render() {
     return (
       <span className="orderedItem">
-      {props.title} - ${props.price}
+      <p>{props.title} - {props.price}</p>
       <Button
       className="closeBtn"
       label="x"
