@@ -6,7 +6,7 @@ import Dishes from './components/Dishes';
 import Drinks from './components/Drinks';
 import Toppings from './components/Toppings';
 // import MenuButton from './components/MenuButton';
-// import Order from './components/Order';
+import Order from './components/Order';
 // import {menu} from './menu.json';
 // import {remove} from 'lodash';
 import Home from './components/Home';
@@ -15,10 +15,38 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      order: '',
-      style: {display: 'none'},
-      initialstyle: {display: 'none'}
-    }
+      mesa: '',
+      cliente: '',
+      selectedItems: []
+    };
+    this.handleInput = this.handleInput.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.remove = this.remove.bind(this);
+  }
+  addToOrder = (title, price) => {
+    this.setState({
+      selectedItems: [...this.state.selectedItems, {title: title, price: price}]
+    })
+  };
+
+  remove = (items,index) => {
+    this.setState ({
+      selectedItems: [...items.slice(0,index),
+        ...items.slice(index+1,items.length)]
+    })
+  };
+
+  handleInput(e) {
+    const {value, name} = e.target;
+    this.setState({
+      [name]: value
+    })
+  }
+  handleSubmit(e) {
+    e.preventDefault();
+    // this.props.addToOrder(this.state);
+    console.log(this.state);
+
   }
   // const [order, setOrder] = useState([]);
   //
@@ -40,7 +68,7 @@ class App extends Component {
   // };
 
   handleAddOrder(dish, topping, drink) {
-      this.state({
+      this.setState({
           order: [...this.state.order, ]
         })
       };
@@ -62,9 +90,21 @@ class App extends Component {
         <header>
           <Navigation/>
           <Route exact path='/' component={Home}/>
-          <Route exact path='/dishes' component={Dishes}/>
-          <Route exact path='/toppings' component={Toppings}/>
-          <Route exact path='/drinks' component={Drinks}/>
+          <Route exact path='/dishes' render={(props) =>
+            <Dishes {...props} addToOrder={this.addToOrder}
+            order={() => <Order selectedItems={this.state.selectedItems}
+            remove={this.state.remove}/>}/>
+          }/>
+          <Route exact path='/toppings' render={(props) =>
+            <Toppings {...props} addToOrder={this.addToOrder}
+            order={() => <Order selectedItems={this.state.selectedItems}
+            remove={this.state.remove}/>}/>
+            }/>
+          <Route exact path='/drinks' render={(props) =>
+            <Drinks {...props} addToOrder={this.addToOrder}
+            order={() => <Order selectedItems={this.state.selectedItems}
+            remove={this.state.remove}/>}/>
+            }/>
         </header>
         </Router>
       </div>
