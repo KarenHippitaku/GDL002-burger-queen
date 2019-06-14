@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Order from './Order';
+// import Order from './Order';
 import {menu} from '../menu.json';
 import MenuButton from './MenuButton';
 import './Menu.css';
@@ -8,24 +8,23 @@ class Drinks extends Component {
     constructor() {
       super();
       this.state = {
-        menu,
-        style: {display: 'none'},
-        initialstyle: {display: 'none'}
+        menu
       }
     }
     render() {
       // console.log(this.state.menu.dishes);
       const drinks = this.state.menu.drinks.map((drink, i) => {
         return (
-          <MenuButton key={i} price={drink.price} title={drink.title}/>
+          <MenuButton key={i} price={drink.price} title={drink.title}
+          onClick={() => this.props.addToOrder(drink.title, drink.price)}/>
         )
       });
       return (
         <section className="menuSection">
-        <div  href='/drinks' className="container drinks" style= {this.props.display}>
+        <div  href='/drinks' className="container drinks">
         {drinks}
         </div>
-        <Order/>
+          {this.props.order()}
         </section>
       )
     }
