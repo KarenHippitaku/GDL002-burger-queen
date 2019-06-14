@@ -18,11 +18,3 @@ button.btn.orderBtn {
   border: solid #e09590;
   border-radius: 1rem;
 }
-
-button.closeBtn {
-  position: right;
-  background: none;
-  border: none;
-  font-size: 2rem;
-  color: #aaa;
-}
