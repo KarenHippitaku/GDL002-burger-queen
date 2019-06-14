@@ -9,23 +9,23 @@ class Order extends Component {
     this.state = {
       mesa: '',
       cliente: '',
-      order: ''
+      selectedItems: []
     };
-    this.handleInput = this.handleInput.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+  //   this.handleInput = this.handleInput.bind(this);
+  //   this.handleSubmit = this.handleSubmit.bind(this);
   }
-  handleInput(e) {
-    const {value, name} = e.target;
-    this.setState({
-      [name]: value
-    })
-  }
-  handleSubmit(e) {
-    e.preventDefault();
-    // this.props.addToOrder(this.state);
-    console.log(this.state);
-
-  }
+  // handleInput(e) {
+  //   const {value, name} = e.target;
+  //   this.setState({
+  //     [name]: value
+  //   })
+  // }
+  // handleSubmit(e) {
+  //   e.preventDefault();
+  //   // this.props.addToOrder(this.state);
+  //   console.log(this.state);
+  //
+  // }
   render() {
     return (
       <div className="order">
@@ -54,7 +54,8 @@ class Order extends Component {
             name="orden"
             className="form-control"
             >
-            <OrderedItem/>
+            {this.props.selectedItems.map((dish, topping, drink) =>
+              <OrderedItem {...dish} {...topping} {...drink} remove={this.props.remove}/>)}
             </div>
           </div>
           <Button className="btn orderBtn" label="Listo"/>
