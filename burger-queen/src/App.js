@@ -23,10 +23,11 @@ class App extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.remove = this.remove.bind(this);
   }
-  addToOrder = (title, price) => {
+  addToOrder = (title, price, index) => {
     this.setState({
       selectedItems: [...this.state.selectedItems, {title: title, price: price}]
     })
+
   };
 
   remove = (items,index) => {
@@ -67,11 +68,11 @@ class App extends Component {
   //   })
   // };
 
-  handleAddOrder(dish, topping, drink) {
-      this.setState({
-          order: [...this.state.order, ]
-        })
-      };
+  // handleAddOrder(dish, topping, drink) {
+  //     this.setState({
+  //         order: [...this.state.order, ]
+  //       })
+  //     };
 
       // updateStyle = (style) => {
       //   if (this.state.style.display === 'none') {
@@ -84,6 +85,7 @@ class App extends Component {
       // const props = this.props; //declares props in a class kind Component
       // render() {
   render() {
+        // console.log(selectedItems);
     return (
       <div className="App">
       <Router>
@@ -92,7 +94,8 @@ class App extends Component {
           <Route exact path='/' component={Home}/>
           <Route exact path='/dishes' render={(props) =>
             <Dishes {...props} addToOrder={this.addToOrder}
-            order={() => <Order selectedItems={this.state.selectedItems}
+            order={() => <Order key={this.state.selectedItems.index}
+            selectedItems={this.state.selectedItems}
             remove={this.state.remove}/>}/>
           }/>
           <Route exact path='/toppings' render={(props) =>
