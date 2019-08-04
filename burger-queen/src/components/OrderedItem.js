@@ -2,7 +2,7 @@ import React from 'react';
 import Button from './Button';
 import './OrderedItem.css';
 
-const OrderedItem = (props) => {
+const OrderedItem = (props, index) => {
 
   // render() {
     return (
@@ -12,6 +12,7 @@ const OrderedItem = (props) => {
       className="closeBtn"
       label="x"
       onClick={() => this.props.remove(this.props.index)}
+      key={index}
       />
       </span>
     )

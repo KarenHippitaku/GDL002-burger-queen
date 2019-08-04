@@ -54,8 +54,8 @@ class Order extends Component {
             name="orden"
             className="form-control"
             >
-            {this.props.selectedItems.map((dish, topping, drink) =>
-              <OrderedItem {...dish} {...topping} {...drink} remove={this.props.remove}/>)}
+            {this.props.selectedItems.map((dish, topping, drink, index) =>
+              <OrderedItem key={index} {...dish} {...topping} {...drink} remove={this.props.remove}/>)}
             </div>
           </div>
           <Button className="btn orderBtn" label="Listo"/>
